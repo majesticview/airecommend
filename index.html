@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 콘텐츠 추천</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <section id="step-1" class="active">
+            <h1>무엇을 추천해 드릴까요?</h1>
+            <div class="buttons">
+                <button onclick="selectCategory('movie')">🎬 영화 추천 받으러 가기</button>
+                <button onclick="selectCategory('book')">📚 도서 추천 받으러 가기</button>
+            </div>
+        </section>
+
+        <section id="step-2">
+            <h2 id="input-title">정보 입력</h2>
+            <p>좋아하는 장르, 최근에 본 작품, 현재 기분 등을 자유롭게 적어주세요.</p>
+            <textarea id="user-input" placeholder="예: 우울할 때 보면 힘이 나는 따뜻한 영화 추천해줘. '인턴' 같은 영화 좋아해."></textarea>
+            <button onclick="requestRecommendation()" class="submit-btn">AI에게 추천 요청하기 ✨</button>
+            <button onclick="goBack()" class="back-btn">뒤로 가기</button>
+        </section>
+
+        <section id="loading">
+            <div class="spinner"></div>
+            <p>AI가 취향을 분석하고 관련 정보를 찾고 있습니다...<br>(약 10~20초 소요)</p>
+        </section>
+
+        <section id="step-3">
+            <h2>추천 목록</h2>
+            <div id="result-container"></div>
+            <button onclick="reset()" class="restart-btn">다시 추천받기</button>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
